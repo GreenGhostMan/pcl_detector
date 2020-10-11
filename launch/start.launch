@@ -1,0 +1,12 @@
+<launch>
+	<node pkg="pcl_detector" type="dynamic_server.py" name="dynamic_server"/>
+
+	<node pkg="pcl_detector" type="pcl_filter" name="pcl_filter" output="screen">
+		<param name="kmean" type="int" value="10" />
+		<param name="threshold" type="double" value="0.2"/>
+	</node>
+
+	<node pkg="pcl_detector" type="pcl_viewer" name="pcl_viewer"/>
+
+	<node pkg="pcl_detector" type="pcl_filter_viewer" name="pcl_filter_viewer"/>
+</launch>
